@@ -1,27 +1,22 @@
 'use strict';
-
 module.exports = function(grunt) {
-
-  var theme = 'designderena';
-  var folder = (theme + '.zip');
-
   // Load all tasks
   require('load-grunt-tasks')(grunt);
   // Show elapsed time
   require('time-grunt')(grunt);
 
   var jsFileList = [
-    //'assets/vendor/bootstrap/js/transition.js',
+    'assets/vendor/bootstrap/js/transition.js',
     'assets/vendor/bootstrap/js/alert.js',
     'assets/vendor/bootstrap/js/button.js',
-    //'assets/vendor/bootstrap/js/carousel.js',
+    'assets/vendor/bootstrap/js/carousel.js',
     'assets/vendor/bootstrap/js/collapse.js',
     'assets/vendor/bootstrap/js/dropdown.js',
     'assets/vendor/bootstrap/js/modal.js',
     'assets/vendor/bootstrap/js/tooltip.js',
     'assets/vendor/bootstrap/js/popover.js',
-    //'assets/vendor/bootstrap/js/scrollspy.js',
-    //'assets/vendor/bootstrap/js/tab.js',
+    'assets/vendor/bootstrap/js/scrollspy.js',
+    'assets/vendor/bootstrap/js/tab.js',
     'assets/vendor/bootstrap/js/affix.js',
     'assets/js/plugins/*.js',
     'assets/js/_*.js'
@@ -98,37 +93,6 @@ module.exports = function(grunt) {
         src: 'assets/css/main.min.css'
       }
     },
-    compress: {
-      'roots-zip': {
-        options: {
-          mode: 'zip',
-          archive: 'dist/' + folder,
-          //archive: 'dist/'(theme)'.zip',
-          level: 9
-        },
-        expand: true,
-        files: [
-          {src: ['admin/**'], dest: ''},
-          //{expand: true, cwd: 'assets/', src: ['**'], dest: 'assets/'}, // makes all src relative to cwd
-          {flatten: true, src: ['assets/css/*main.min.css'], dest: '', filter: 'isFile'},
-          {flatten: true, src: ['assets/css/*editor-style.css'], dest: '', filter: 'isFile'},
-          {flatten: true, src: ['assets/css/*login-style.css'], dest: '', filter: 'isFile'},
-          {flatten: true, src: ['assets/css/*admin-style.css'], dest: '', filter: 'isFile'},
-          {flatten: true, src: ['assets/fonts/*'], dest: ''},
-          {flatten: true, src: ['assets/img/**'], dest: ''},
-          {flatten: true, src: ['assets/js/vendor/*'], dest: ''},
-          {flatten: true, src: ['assets/js/*scripts.min.js'], dest: ''},
-          {flatten: true, src: ['assets/vendor/dist/*jquery.min.js'], dest: '', filter: 'isFile'},
-          //{flatten: true, src: ['assets/vendor/**'], dest: ''},
-          {src: ['lang/*'], dest: ''},
-          {src: ['lib/*'], dest: ''},
-          {src: ['templates/*'], dest: ''},
-          {expand: true, src: ['*.php'], dest: ''},
-          {expand: true, src: ['*.css'], dest: ''},
-          {expand: true, src: ['*.jpg'], dest: ''},
-        ],
-      },
-    },
     modernizr: {
       build: {
         devFile: 'assets/vendor/modernizr/modernizr.js',
@@ -138,6 +102,9 @@ module.exports = function(grunt) {
             ['assets/js/scripts.min.js'],
             ['assets/css/main.min.css']
           ]
+        },
+        extra: {
+          shiv: false
         },
         uglify: true,
         parseFiles: true
@@ -207,11 +174,5 @@ module.exports = function(grunt) {
     'uglify',
     'modernizr',
     'version'
-  ]);
-  // Package creation task.
-  grunt.registerTask('dist', 'Create archives for testing purposes.', [
-    'build',
-    'compress:roots-zip',
-    //'compress:roots-tarball'
   ]);
 };
