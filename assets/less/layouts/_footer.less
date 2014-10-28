@@ -1,1 +1,89 @@
-.content-info { }
+.content-info {
+  position:relative;
+  color:#9b9b9b;
+  background-color:#2a2a2a;
+  font-size: 14px;
+  padding-top: 30px;
+
+  a {color:#9b9b9b ;
+  &:hover {color:#fff;}
+  }
+}
+
+footer hr {
+	border-color:rgba(255,255,255,0.12);
+	margin:25px 0;
+}
+
+.copyright {
+  padding:25px 0;
+  color:#b1b1b1;
+  border-top:1px solid rgba(255,255,255,0.12);
+  span {color:#fff;}
+}
+.copyright_logo, .copyright_logo:focus {color:#949494;}
+
+
+/* __________ Footer Menu __________ */
+.foot_menu li {
+	position:relative;
+	display:inline-block;
+	margin-right:14px;
+	padding-right:13px;
+}
+.foot_menu li:before {
+	content:'|';
+	position:absolute;
+	right:0;
+	top:0;
+	color:#9b9b9b;
+}
+.foot_menu li:last-child:before {display:none;}
+.foot_menu li a {
+	display:block;
+	text-transform:uppercase;
+	color:#9b9b9b;
+}
+.foot_menu li.active a,
+.foot_menu li a:hover {
+	color:#fff;
+}
+
+
+
+/* __________ Footer Info __________ */
+.foot_info {padding-bottom:24px;}
+.foot_info li {
+	display:inline-block;
+	margin-right:20px;
+	line-height:20px;
+}
+.foot_info li i {
+	display:inline-block;
+	vertical-align:top;
+	height:20px;
+	padding-right:15px;
+	font-size:16px;
+	color:#bbb;
+}
+/* __________ Footer Social __________ */
+.social {padding:0 0 20px;}
+.social a {
+	display:inline-block;
+	margin:0 7px 0 0;
+	width:22px;
+	height:22px;
+	border-radius:50%;
+	background-color:#bbb;
+}
+.social a:hover {background-color: @brand-primary;}
+.social a i {
+	display:block;
+	line-height:22px;
+	text-align:center;
+	color:#2a2a2a;
+	transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+}
+.social a:hover i {color:#2a2a2a;}
+

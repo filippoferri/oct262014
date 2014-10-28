@@ -23,12 +23,41 @@ var Roots = {
   common: {
     init: function() {
       // JavaScript to be fired on all pages
+      /* Sticky */
+      jQuery(window).load(function(){
+
+          jQuery("#preloader").fadeOut("slow");
+
+           if (jQuery(window).width() >= 768){
+              jQuery(".navbar").sticky({ topSpacing: 0 });
+          }
+      }); //End Load window
+
+      jQuery(document).ready(function($){
+
+        //Nice scroll
+        function niceScrollInit(){
+          $("html").niceScroll({
+              scrollspeed: 60,
+              mousescrollstep: 40,
+              cursorwidth: 15,
+              cursorborder: 0,
+              cursorcolor: '#303030',
+              cursorborderradius: 6,
+              autohidemode: false,
+              horizrailenabled: false
+          });
+        }
+        niceScrollInit();
+
+      }); //End ready document
     }
   },
   // Home page
   home: {
     init: function() {
       // JavaScript to be fired on the home page
+
     }
   },
   // About us page, note the change from about-us to about_us.

@@ -7,6 +7,12 @@
     </div>
   <![endif]-->
 
+    <div id='preloader'>
+    <div id="load" class="rotation">
+     <img class="pulse" src='<?php echo get_template_directory_uri(); ?>/assets/img/logo.png' alt='loading...'/>
+    </div>
+  </div>
+
   <?php
     do_action('get_header');
     get_template_part('templates/header');

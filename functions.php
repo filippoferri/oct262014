@@ -21,6 +21,12 @@ $roots_includes = array(
   'lib/gallery.php',         // Custom [gallery] modifications
   'lib/scripts.php',         // Scripts and stylesheets
   'lib/extras.php',          // Custom functions
+  'lib/shortcodes.php',      // Shortcodes
+
+  'lib/admin.php',           // Admin
+  'lib/customizer.php',      // Admin Ext. Customizer
+  'admin/kirki.php',         // Style Customizer
+  'admin/customizer.php',    // Settings
 );
 
 foreach ($roots_includes as $file) {
